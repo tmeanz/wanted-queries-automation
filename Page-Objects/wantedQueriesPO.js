@@ -1,7 +1,7 @@
 var wantedCommands = {
 
     clickWanted: function (wantedValue, wantedInput) {
-        wantedCommands
+        this
         .setValue('@header', '1234567890')
         .setValue('@mke', 'abc@')
         .setValue('@oai', 'asdf56789')
@@ -17,8 +17,9 @@ var wantedCommands = {
         .setValue('@dlDate', '10/24/2020')
         .setValue('@licensePlate', 'asfd1235')
         .setValue('@licenseState', 'ut')
-        .setValue('@licenseExp', '10/24/2020')
+        .setValue('@licenseExp', '10/24/2021')
         .click('@submitButton')
+        browser.expect.element('span[name="queryBody"]').text.to.equal('1234567890, abc@, asdf56789, taylor, M, W, 601, 190, brown, murder, asdf1234, ut, 10/24/2020, asfd1235, ut, 10/24/2021').before(500)
 
 
     }
@@ -27,7 +28,7 @@ var wantedCommands = {
 
 module.exports = {
     url: 'http://localhost:3000/#/enter',
-    commands: [wantedValue],
+    commands: [wantedCommands],
     elements: {
         header: 'input[name="hdrInput"]',
         mke: 'input[name="mkeInput"]',
