@@ -13,7 +13,9 @@ module.exports = {
     },
     
     'Correct Input Lowercase': browser => {
-        
+        wanted
+        .click('@hamburger')
+        wanted.clickWanted()
     }
 
     

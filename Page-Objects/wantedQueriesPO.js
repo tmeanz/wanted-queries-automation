@@ -1,6 +1,6 @@
 var wantedCommands = {
 
-    clickWanted: function (wantedValue, wantedInput) {
+    clickWanted: function () {
         this
         .setValue('@header', '1234567890')
         .setValue('@mke', 'abc@')
@@ -20,7 +20,7 @@ var wantedCommands = {
         .setValue('@licenseExp', '10/24/2021')
         .click('@submitButton')
         browser.expect.element('span[name="queryBody"]').text.to.equal('1234567890, abc@, asdf56789, taylor, M, W, 601, 190, brown, murder, asdf1234, ut, 10/24/2020, asfd1235, ut, 10/24/2021').before(500)
-
+        return this
 
     }
 }
@@ -47,8 +47,10 @@ module.exports = {
         licenseState: 'input[name="lisInput"]',
         licenseExp: 'input[name="lidInput"]',
         submitButton: '#saveBtn',
-        clearButton: '#clearBtn'
-        
+        clearButton: '#clearBtn',
+        hamburger: '.bm-burger-button',
+        enterWantedBtn: 
+
 
     }
 }
